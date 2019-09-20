@@ -17,4 +17,5 @@ Future prototypes will incorporate more advanced metrics, such as Mediolateral S
 # Software
 * Language: CircuitPython
 * Adafruit Libraries for Hardware Usage
+* Project folder contains code/logic
 * Runs code.py file upon boot
