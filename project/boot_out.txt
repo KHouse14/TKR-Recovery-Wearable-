@@ -1,0 +1,2 @@
+Adafruit CircuitPython 4.0.0-beta.6-89-gfa8e96c53-dirty on 2019-04-11; SAM32v2b with samd51j20
+boot.py output:
