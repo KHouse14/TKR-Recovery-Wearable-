@@ -13,3 +13,8 @@ Future prototypes will incorporate more advanced metrics, such as Mediolateral S
 * Nylon Knee Brace
 
 ![Image of Knee Sleeve 2](https://github.com/KHouse14/TKR-Recovery-Wearable-/blob/master/images/IMG_8604.png)
+
+# Software
+* Language: CircuitPython
+* Adafruit Libraries for Hardware Usage
+* Runs code.py file upon boot
