@@ -11,4 +11,5 @@ Future prototypes will incorporate more advanced metrics, such as Mediolateral S
 * Jumper Wires
 * Silicone Gel for gluing
 * Nylon Knee Brace
-![Image of Knee Sleeve 2] (https://github.com/KHouse14/TKR-Recovery-Wearable-/blob/master/images/IMG_8604.png)
+
+![Image of Knee Sleeve 2](https://github.com/KHouse14/TKR-Recovery-Wearable-/blob/master/images/IMG_8604.png)
