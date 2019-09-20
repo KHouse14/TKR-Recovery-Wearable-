@@ -1,0 +1,2 @@
+Code.py contains most of the logic and imported libraries
+Boot.py runs code.py upon boot
