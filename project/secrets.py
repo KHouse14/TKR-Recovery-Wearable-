@@ -4,8 +4,8 @@
 # keep it a secret.
 
 secrets = {
-    'ssid' : 'mayB',             # Keep the two '' quotes around the name
-    'password' : 'notlikely',         # Keep the two '' quotes around password
+    'ssid' : 'Stanford Residences',             # Keep the two '' quotes around the name
+    'password' : '',         # Keep the two '' quotes around password
     'timezone' : "America/New_York",  # http://worldtimeapi.org/timezones
     'aio_username' : 'YOUR_ADAFRUIT_ACCOUNT_USERNAME',
     'aio_key' : 'YOUR_ADAFRUITIO_KEY',
