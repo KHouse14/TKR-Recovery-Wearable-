@@ -3,7 +3,7 @@ Prototype electronic knee sleeve that helps people recovering from Total Knee Re
 Future prototypes will incorporate more advanced metrics, such as Mediolateral Sway on the knee, and improve the overall analysis of the data.
 ![Image of Knee Sleeve 1](https://github.com/KHouse14/TKR-Recovery-Wearable-/blob/master/images/IMG_8995.png)
 
-# Materials-
+# Hardware
 * Microcontroller: SAM32
 * Wifi connectivity: ESP32
 * 3.7V LiPo Battery
