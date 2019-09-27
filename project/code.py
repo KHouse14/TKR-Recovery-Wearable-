@@ -1,5 +1,3 @@
-# Simple demo of the LSM9DS1 accelerometer, magnetometer, gyroscope.
-# Will print the acceleration, magnetometer, and gyroscope values every second.
 import math
 import random
 import time
@@ -37,31 +35,6 @@ def testing(environ):
 
 serverlib.register("GET", "/", hello)
 serverlib.register("GET", "/test", testing)
-# Set up the sd card as a spi device
-#cs = digitalio.DigitalInOut(board.xSDCS)
-# print(cs)
-#spi = busio.SPI(board.SCK, board.MOSI, board.MISO)
-
-
-# Connect to the card and mount the filesystem.
-# pin = DigitalInOut(board.RTS)
-# pin.direction = Direction.OUTPUT
-# pin.value = 0
-
-# sdcard = adafruit_sdcard.SDCard(spi, cs)
-# vfs = storage.VfsFat(sdcard)
-# storage.mount(vfs, "/sd")
-
-#open a file with append
-# file_path = "/sd/data"
-# file_id = random.randint(0, 10000)
-# suffix = ".html"
-# fp = open(file_path + str(file_id) + suffix, "w")
-
-# I2C connection:
-#i2c = busio.I2C(board.SCL, board.SDA)
-#sensor1 = adafruit_lsm9ds1.LSM9DS1_I2C(i2c)
-#sensor2 = adafruit_l3gd20.L3GD20_I2C(i2c)
 
 #SPI connection:
 from digitalio import DigitalInOut, Direction
@@ -74,6 +47,7 @@ csm.direction = Direction.OUTPUT
 csm.value = True
 sensor1 = adafruit_lsm9ds1.LSM9DS1_SPI(spi, csag, csm)
 
+#shin = 1, thigh = 2
 csag2 = DigitalInOut(board.D59)
 csag2.direction = Direction.OUTPUT
 csag2.value = True
@@ -81,14 +55,12 @@ csm2 = DigitalInOut(board.D49)
 csm2.direction = Direction.OUTPUT
 csm2.value = True
 sensor2 = adafruit_lsm9ds1.LSM9DS1_SPI(spi, csag2, csm2)
-#shin = 1, thigh = 2
 
 accel_angle = 0
 prev_accel_angle = 0
 saved_accel_angle = 0
 inter = 0.1
 seconds_since_start = 0
-
 shin_vert_angle = 0
 
 steps = 0
@@ -108,13 +80,12 @@ mass = 84 #kg
 
 html_body = """"""
 
-
 while True:
     serverlib.poll()
     print("polling")
     accel_x1, accel_y1, accel_z1 = sensor1.acceleration
     accel_x2, accel_y2, accel_z2 = sensor2.acceleration
-    #mag_x, mag_y, mag_z = sensor.magnetic
+
     gyro_x1, gyro_y1, gyro_z1 = sensor1.gyro
     gyro_x2, gyro_y2, gyro_z2 = sensor2.gyro
 
@@ -176,24 +147,12 @@ while True:
 
     dataString += "<p> Time: " + str(math.ceil(seconds_since_start)) + "s || g-force: " + str(g_force_thigh) + " || Angle: " + str(real_angle) + "</p>"
 
-# html_body = """<html>
-#     <body><p> Time: """ + str(math.ceil(seconds_since_start)) + """s Force: """ + str(force_thigh) + """ Angle: """ + str(real_angle) + """</p>
-#     </body>
-#     </html>"""
-    #fp.write("""<html>
-    #<body><p> Time: """ + str(math.ceil(seconds_since_start)) + """s Force in g: """ + str(force_thigh) + """ Angle: """ + str(real_angle) + """</p>
-    #</body>
-    #</html>""")
-
     if flush_counter == 75:
         dataString = ""
         flush_counter = 0
 
-
     if steps == 0:
         steps += 1
-
-
 
     flush_counter += 1
 
